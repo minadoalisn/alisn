@@ -3,221 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="关于广东艾里森光电技术有限公司 - 专注于文旅场景创新与光影艺术赋能的综合性科技服务商">
-    <meta name="keywords" content="艾里森光电,文旅灯光,灯光艺术装置,公司介绍">
-    <meta name="author" content="广东艾里森光电技术有限公司">
-    <meta name="robots" content="index, follow">
-    
-    <!-- 百度搜索资源平台验证 -->
-    <meta name="baidu-site-verification" content="codeva-sevWLRK4PB" />
-    
-    <!-- GEO优化标签 -->
-    <meta name="geo.region" content="CN-GD">
-    <meta name="geo.placename" content="江门市">
-    <meta name="geo.position" content="22.5922;113.0906">
-    <meta name="ICBM" content="22.5922, 113.0906">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="关于我们 - 广东艾里森光电">
-    <meta property="og:description" content="专注于文旅场景创新与光影艺术赋能的综合性科技服务商">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="zh_CN">
-    
     <title>关于我们 - 广东艾里森光电技术有限公司</title>
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
-        }
-        
-        header {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
-        }
-        
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #FFD700;
-        }
-        
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #FFD700;
-        }
-        
-        .hero {
-            padding: 180px 2rem 80px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            color: #FFD700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            color: #ccc;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-        
-        .section {
-            margin-bottom: 3rem;
-        }
-        
-        .highlight {
-            background: rgba(255, 215, 0, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #FFD700;
-            margin: 2rem 0;
-        }
-        
-        h2 {
-            color: #FFD700;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        
-        p {
-            color: #ccc;
-            margin-bottom: 1rem;
-        }
-        
-        ul {
-            color: #ccc;
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-        }
-        
-        strong {
-            color: #FFD700;
-        }
-        
-        a {
-            color: #FFD700;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 3rem 2rem 1.5rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-            margin-top: 4rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-info {
-            color: #ccc;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-info p {
-            margin: 0.5rem 0;
-        }
-        
-        .copyright {
-            color: #666;
-            font-size: 0.9rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', sans-serif; background: #0c0c0c; color: #fff; }
+        header { background: #111; padding: 20px; position: fixed; top: 0; width: 100%; z-index: 1000; }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; color: #FFD700; text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 16px; display: block; padding: 5px 0; }
+        .nav-links a:hover { color: #FFD700; }
+        .nav-links a.active { color: #FFD700; border-bottom: 2px solid #FFD700; }
+        .hero { padding: 150px 20px 80px; text-align: center; }
+        .hero h1 { font-size: 48px; color: #FFD700; margin-bottom: 20px; }
+        .hero p { font-size: 18px; color: #ccc; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .highlight { background: #1a1a1a; padding: 30px; border-radius: 10px; border-left: 4px solid #FFD700; margin: 30px 0; }
+        h2 { color: #FFD700; margin: 30px 0 15px; font-size: 28px; }
+        p { color: #ccc; line-height: 1.8; margin-bottom: 15px; }
+        ul { color: #ccc; margin-left: 30px; }
+        li { margin-bottom: 10px; }
+        strong { color: #FFD700; }
+        footer { background: #111; padding: 40px 20px; text-align: center; margin-top: 60px; }
+        .footer-info p { margin: 10px 0; color: #ccc; }
+        .footer-info a { color: #FFD700; text-decoration: none; }
+        .copyright { color: #666; margin-top: 20px; font-size: 14px; }
+        @media(max-width:768px){.nav-links{gap:15px;font-size:14px}}
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">艾里森光电</div>
+            <a href="index.html" class="logo">艾里森光电</a>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="about.html" class="active">关于我们</a></li>
@@ -226,79 +43,53 @@
             </ul>
         </nav>
     </header>
-
     <section class="hero">
         <h1>关于我们</h1>
         <p>专注于文旅场景创新与光影艺术赋能的综合性科技服务商</p>
     </section>
-
     <div class="container">
-        <div class="section">
-            <div class="highlight">
-                <h2>公司简介</h2>
-                <p><strong>广东艾里森光电技术有限公司</strong>是一家专注于文旅场景创新与光影艺术赋能的综合性科技服务商，致力于通过创意设计、艺术装置与数字技术的深度融合，为城市更新、文旅产业、商业空间提供从概念策划到落地交付的全链路解决方案。</p>
-            </div>
+        <div class="highlight">
+            <h2>公司简介</h2>
+            <p><strong>广东艾里森光电技术有限公司</strong>是一家专注于文旅场景创新与光影艺术赋能的综合性科技服务商，致力于通过创意设计、艺术装置与数字技术的深度融合，为城市更新、文旅产业、商业空间提供从概念策划到落地交付的全链路解决方案。</p>
         </div>
-
-        <div class="section">
-            <h2>行业洞察</h2>
-            <p>景区客流不足的本质从来不是"位置不好"或"资源不够"，而是<strong>体验同质化、记忆点缺失、传播链路断裂</strong>。艾里森的定位，恰好是这三个问题的解法。</p>
-        </div>
-
-        <div class="section">
+        <h2>行业洞察</h2>
+        <p>景区客流不足的本质从来不是"位置不好"或"资源不够"，而是<strong>体验同质化、记忆点缺失、传播链路断裂</strong>。艾里森的定位，恰好是这三个问题的解法。</p>
+        <div class="highlight">
             <h2>核心价值主张</h2>
-            <div class="highlight">
-                <p><strong>夜经济来了，你的景区还在"睡"吗？</strong></p>
-                <p><strong>广东艾里森光电技术有限公司——用光影重构景区流量密码</strong></p>
-            </div>
+            <p><strong>夜经济来了，你的景区还在"睡"吗？</strong></p>
+            <p><strong>广东艾里森光电技术有限公司——用光影重构景区流量密码</strong></p>
         </div>
-
-        <div class="section">
-            <h2>行业痛点</h2>
-            <p>90%的景区困局只有一个：白天看风景，晚上无去处，游客拍完照就走，留不住、传不开、复购低。</p>
-
-            <div class="highlight">
-                <p><strong>我们不卖设备，我们卖的是游客的停留时间。</strong></p>
-            </div>
+        <h2>行业痛点</h2>
+        <p>90%的景区困局只有一个：白天看风景，晚上无去处，游客拍完照就走，留不住、传不开、复购低。</p>
+        <div class="highlight">
+            <p><strong>我们不卖设备，我们卖的是游客的停留时间。</strong></p>
         </div>
-
-        <div class="section">
-            <h2>核心竞争力</h2>
-            <ul>
-                <li><strong>懂流量逻辑</strong> - 每个装置都经过"出片率""传播力""互动性"三重验证</li>
-                <li><strong>懂运营闭环</strong> - 从方案设计到落地交付，再到后期运维，全链条护航</li>
-                <li><strong>懂文化在地性</strong> - 拒绝千篇一律，每个项目都是景区独特IP的视觉表达</li>
-                <li><strong>懂工程落地</strong> - 大型舞美装置的实战经验，确保创意100%还原</li>
-            </ul>
-
-            <div class="highlight">
-                <p><strong>我们交付的不是设备，是完整的流量增长方案。</strong></p>
-                <p>从"无人问津"到"网红打卡地"，艾里森让光影成为景区最硬核的引流武器。</p>
-            </div>
+        <h2>核心竞争力</h2>
+        <ul>
+            <li><strong>懂流量逻辑</strong> - 每个装置都经过"出片率""传播力""互动性"三重验证</li>
+            <li><strong>懂运营闭环</strong> - 从方案设计到落地交付，再到后期运维，全链条护航</li>
+            <li><strong>懂文化在地性</strong> - 拒绝千篇一律，每个项目都是景区独特IP的视觉表达</li>
+            <li><strong>懂工程落地</strong> - 大型舞美装置的实战经验，确保创意100%还原</li>
+        </ul>
+        <div class="highlight">
+            <p><strong>我们交付的不是设备，是完整的流量增长方案。</strong></p>
+            <p>从"无人问津"到"网红打卡地"，艾里森让光影成为景区最硬核的引流武器。</p>
         </div>
-
-        <div class="section">
-            <h2>联系我们</h2>
-            <div class="highlight">
-                <p><strong>公司地址：</strong>广东省江门市江海区东升路南山工业园西区一号厂房</p>
-                <p><strong>联系电话：</strong><a href="tel:18026422225">18026422225</a></p>
-                <p><strong>电子邮箱：</strong><a href="mailto:slisnlight@163.com">slisnlight@163.com</a></p>
-            </div>
+        <h2>联系我们</h2>
+        <div class="highlight">
+            <p><strong>公司地址：</strong>广东省江门市江海区东升路南山工业园西区一号厂房</p>
+            <p><strong>联系电话：</strong><a href="tel:18026422225">18026422225</a></p>
+            <p><strong>电子邮箱：</strong><a href="mailto:slisnlight@163.com">slisnlight@163.com</a></p>
         </div>
     </div>
-
     <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p><strong>广东艾里森光电技术有限公司</strong></p>
-                <p>📍 地址：广东省江门市江海区东升路南山工业园西区一号厂房</p>
-                <p>📞 电话：<a href="tel:18026422225">18026422225</a></p>
-                <p>📧 邮箱：<a href="mailto:slisnlight@163.com">slisnlight@163.com</a></p>
-            </div>
-            <div class="copyright">
-                © 2026 广东艾里森光电技术有限公司 | 用光影重构景区流量密码
-            </div>
+        <div class="footer-info">
+            <p><strong>广东艾里森光电技术有限公司</strong></p>
+            <p>地址：广东省江门市江海区东升路南山工业园西区一号厂房</p>
+            <p>电话：<a href="tel:18026422225">18026422225</a></p>
+            <p>邮箱：<a href="mailto:slisnlight@163.com">slisnlight@163.com</a></p>
         </div>
+        <div class="copyright">© 2026 广东艾里森光电技术有限公司</div>
     </footer>
 </body>
 </html>

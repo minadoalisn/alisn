@@ -3,321 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="广东艾里森光电技术有限公司 - 文旅灯光艺术装置案例展示，查看我们的成功项目案例">
-    <meta name="keywords" content="文旅灯光案例,灯光艺术装置案例,美陈装置案例,艾里森光电案例">
-    <meta name="author" content="广东艾里森光电技术有限公司">
-    <meta name="robots" content="index, follow">
-    
-    <!-- 百度搜索资源平台验证 -->
-    <meta name="baidu-site-verification" content="codeva-sevWLRK4PB" />
-    
-    <!-- GEO优化标签 -->
-    <meta name="geo.region" content="CN-GD">
-    <meta name="geo.placename" content="江门市">
-    <meta name="geo.position" content="22.5922;113.0906">
-    <meta name="ICBM" content="22.5922, 113.0906">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="案例展示 - 广东艾里森光电">
-    <meta property="og:description" content="查看我们的文旅灯光艺术装置成功案例">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="zh_CN">
-    
-    <title>案例展示 - 广东艾里森光电技术有限公司 | 文旅灯光艺术装置</title>
-    
+    <title>案例展示 - 广东艾里森光电技术有限公司</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
-        }
-        
-        header {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
-        }
-        
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #FFD700;
-        }
-        
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #FFD700;
-        }
-        
-        .hero {
-            padding: 180px 2rem 80px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            color: #FFD700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            color: #ccc;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cases-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-        
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .case-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-        }
-        
-        .case-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-        
-        .case-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #2a2a4a 0%, #1a1a2e 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .case-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            animation: pulse 3s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-        
-        .case-image-placeholder {
-            color: #FFD700;
-            font-size: 3rem;
-            z-index: 1;
-        }
-        
-        .case-content {
-            padding: 1.5rem;
-        }
-        
-        .case-title {
-            font-size: 1.4rem;
-            color: #FFD700;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        
-        .case-category {
-            display: inline-block;
-            background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-        
-        .case-description {
-            color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        
-        .case-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
-        }
-        
-        .case-location {
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        .case-date {
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        .case-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000;
-            padding: 0.6rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 1rem;
-        }
-        
-        .case-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
-        }
-        
-        .add-case-notice {
-            background: rgba(255, 215, 0, 0.1);
-            border: 2px dashed rgba(255, 215, 0, 0.3);
-            border-radius: 15px;
-            padding: 3rem;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .add-case-notice h3 {
-            color: #FFD700;
-            margin-bottom: 1rem;
-        }
-        
-        .add-case-notice p {
-            color: #ccc;
-            margin-bottom: 1rem;
-        }
-        
-        footer {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 3rem 2rem 1.5rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-info {
-            color: #ccc;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-info p {
-            margin: 0.5rem 0;
-        }
-        
-        .footer-info a {
-            color: #FFD700;
-            text-decoration: none;
-        }
-        
-        .footer-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .copyright {
-            color: #666;
-            font-size: 0.9rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .cases-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', sans-serif; background: #0c0c0c; color: #fff; }
+        header { background: #111; padding: 20px; position: fixed; top: 0; width: 100%; z-index: 1000; }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; color: #FFD700; text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 16px; display: block; padding: 5px 0; }
+        .nav-links a:hover { color: #FFD700; }
+        .nav-links a.active { color: #FFD700; border-bottom: 2px solid #FFD700; }
+        .hero { padding: 150px 20px 80px; text-align: center; }
+        .hero h1 { font-size: 48px; color: #FFD700; margin-bottom: 20px; }
+        .hero p { font-size: 18px; color: #ccc; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .case-card { background: #1a1a1a; border-radius: 10px; overflow: hidden; border: 1px solid #333; transition: transform 0.3s, border-color 0.3s; }
+        .case-card:hover { transform: translateY(-5px); border-color: #FFD700; }
+        .case-image { width: 100%; height: 220px; overflow: hidden; background: #333; }
+        .case-image img { width: 100%; height: 100%; object-fit: cover; }
+        .case-content { padding: 25px; }
+        .case-title { font-size: 20px; color: #FFD700; margin-bottom: 10px; font-weight: bold; }
+        .case-category { display: inline-block; background: rgba(255,215,0,0.2); color: #FFD700; padding: 5px 12px; border-radius: 20px; font-size: 13px; margin-bottom: 15px; }
+        .case-description { color: #ccc; line-height: 1.7; margin-bottom: 15px; font-size: 14px; }
+        .case-meta { display: flex; justify-content: space-between; padding-top: 15px; border-top: 1px solid #333; font-size: 13px; color: #999; }
+        .notice { background: rgba(255,215,0,0.1); border: 2px dashed rgba(255,215,0,0.3); border-radius: 10px; padding: 40px; text-align: center; margin-top: 40px; }
+        .notice h3 { color: #FFD700; margin-bottom: 15px; font-size: 20px; }
+        .notice p { color: #ccc; margin-bottom: 15px; }
+        .notice a { color: #FFD700; text-decoration: none; font-weight: bold; font-size: 16px; }
+        footer { background: #111; padding: 40px 20px; text-align: center; margin-top: 60px; }
+        .footer-info p { margin: 10px 0; color: #ccc; }
+        .footer-info a { color: #FFD700; text-decoration: none; }
+        .copyright { color: #666; margin-top: 20px; font-size: 14px; }
+        .admin-link { position: fixed; bottom: 20px; right: 20px; background: rgba(255,215,0,0.2); color: #FFD700; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-size: 14px; }
+        @media(max-width:768px){.cases-grid{grid-template-columns:1fr}.nav-links{gap:15px;font-size:14px}}
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">艾里森光电</div>
+            <a href="index.html" class="logo">艾里森光电</a>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="about.html">关于我们</a></li>
@@ -326,148 +52,112 @@
             </ul>
         </nav>
     </header>
-
     <section class="hero">
-        <h1>✨ 案例展示</h1>
+        <h1>案例展示</h1>
         <p>用光影重构景区流量密码，打造独特的文旅体验</p>
     </section>
-
-    <section class="cases-container">
+    <div class="container">
         <div class="cases-grid">
-            <!-- 案例1 -->
             <div class="case-card">
                 <div class="case-image">
-                    <div class="case-image-placeholder">💡</div>
+                    <img src="https://picsum.photos/800/600?random=1" alt="景区夜游灯光秀" loading="lazy">
                 </div>
                 <div class="case-content">
                     <h3 class="case-title">某景区夜游灯光秀</h3>
                     <span class="case-category">文旅灯光</span>
-                    <p class="case-description">
-                        为某知名景区打造沉浸式夜游灯光秀，融合现代科技与传统文化，
-                        创造独特的夜间游览体验，显著提升景区夜间客流量。
-                    </p>
+                    <p class="case-description">为某知名景区打造沉浸式夜游灯光秀，融合现代科技与传统文化，创造独特的夜间游览体验，显著提升景区夜间客流量。</p>
                     <div class="case-meta">
-                        <span class="case-location">📍 广东省</span>
-                        <span class="case-date">📅 2025年</span>
+                        <span>广东省</span>
+                        <span>2025年</span>
                     </div>
                 </div>
             </div>
-
-            <!-- 案例2 -->
             <div class="case-card">
                 <div class="case-image">
-                    <div class="case-image-placeholder">🎨</div>
+                    <img src="https://picsum.photos/800/600?random=2" alt="商业广场美陈装置" loading="lazy">
                 </div>
                 <div class="case-content">
                     <h3 class="case-title">商业广场美陈装置</h3>
                     <span class="case-category">美陈装置</span>
-                    <p class="case-description">
-                        为大型商业广场设计并制作互动式美陈装置，
-                        结合灯光艺术与科技互动，成为网红打卡热点。
-                    </p>
+                    <p class="case-description">为大型商业广场设计制作互动式美陈装置，结合灯光艺术与科技互动，成为网红打卡热点。</p>
                     <div class="case-meta">
-                        <span class="case-location">📍 江门市</span>
-                        <span class="case-date">📅 2025年</span>
+                        <span>江门市</span>
+                        <span>2025年</span>
                     </div>
                 </div>
             </div>
-
-            <!-- 案例3 -->
             <div class="case-card">
                 <div class="case-image">
-                    <div class="case-image-placeholder">🎭</div>
+                    <img src="https://picsum.photos/800/600?random=3" alt="大型音乐节舞美装置" loading="lazy">
                 </div>
                 <div class="case-content">
                     <h3 class="case-title">大型音乐节舞美装置</h3>
                     <span class="case-category">舞美装置</span>
-                    <p class="case-description">
-                        为大型音乐节设计制作震撼的舞台灯光艺术装置，
-                        融合光影艺术与舞台表演，创造难忘的现场体验。
-                    </p>
+                    <p class="case-description">为大型音乐节设计制作震撼的舞台灯光艺术装置，融合光影艺术与舞台表演，创造难忘的现场体验。</p>
                     <div class="case-meta">
-                        <span class="case-location">📍 珠三角</span>
-                        <span class="case-date">📅 2024年</span>
+                        <span>珠三角</span>
+                        <span>2024年</span>
                     </div>
                 </div>
             </div>
-
-            <!-- 案例4 -->
             <div class="case-card">
                 <div class="case-image">
-                    <div class="case-image-placeholder">🏙️</div>
+                    <img src="https://picsum.photos/800/600?random=4" alt="城市更新灯光改造" loading="lazy">
                 </div>
                 <div class="case-content">
                     <h3 class="case-title">城市更新灯光改造</h3>
                     <span class="case-category">城市更新</span>
-                    <p class="case-description">
-                        参与城市更新项目，为老城区注入新的活力，
-                        通过灯光艺术提升城市形象，促进夜间经济发展。
-                    </p>
+                    <p class="case-description">参与城市更新项目，为老城区注入新的活力，通过灯光艺术提升城市形象，促进夜间经济发展。</p>
                     <div class="case-meta">
-                        <span class="case-location">📍 广东省</span>
-                        <span class="case-date">📅 2024年</span>
+                        <span>广东省</span>
+                        <span>2024年</span>
                     </div>
                 </div>
             </div>
-
-            <!-- 案例5 -->
             <div class="case-card">
                 <div class="case-image">
-                    <div class="case-image-placeholder">🎪</div>
+                    <img src="https://picsum.photos/800/600?random=5" alt="行为艺术舞台装置" loading="lazy">
                 </div>
                 <div class="case-content">
                     <h3 class="case-title">行为艺术舞台装置</h3>
                     <span class="case-category">行为艺术</span>
-                    <p class="case-description">
-                        为行为艺术表演定制独特的舞台灯光装置，
-                        将光影与表演完美融合，创造令人惊叹的艺术效果。
-                    </p>
+                    <p class="case-description">为行为艺术表演定制独特的舞台灯光装置，将光影与表演完美融合，创造令人惊叹的艺术效果。</p>
                     <div class="case-meta">
-                        <span class="case-location">📍 广州市</span>
-                        <span class="case-date">📅 2024年</span>
+                        <span>广州市</span>
+                        <span>2024年</span>
                     </div>
                 </div>
             </div>
-
-            <!-- 案例6 -->
             <div class="case-card">
                 <div class="case-image">
-                    <div class="case-image-placeholder">✨</div>
+                    <img src="https://picsum.photos/800/600?random=6" alt="网红打卡灯光装置" loading="lazy">
                 </div>
                 <div class="case-content">
                     <h3 class="case-title">网红打卡灯光装置</h3>
                     <span class="case-category">打卡装置</span>
-                    <p class="case-description">
-                        设计制作极具传播力的网红打卡灯光装置，
-                        结合互动科技与美学设计，迅速成为社交媒体热点。
-                    </p>
+                    <p class="case-description">设计制作极具传播力的网红打卡灯光装置，结合互动科技与美学设计，迅速成为社交媒体热点。</p>
                     <div class="case-meta">
-                        <span class="case-location">📍 深圳市</span>
-                        <span class="case-date">📅 2023年</span>
+                        <span>深圳市</span>
+                        <span>2023年</span>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="add-case-notice">
-            <h3>📢 更多案例即将上线</h3>
-            <p>我们正在整理更多精彩案例，后台管理系统开发中...</p>
-            <p>如有项目合作需求，请联系我们：<a href="tel:18026422225" style="color: #FFD700;">18026422225</a></p>
+        <div class="notice">
+            <h3>后台管理</h3>
+            <p>需要添加或管理案例？请访问后台管理系统</p>
+            <p><a href="admin/">进入后台管理</a></p>
         </div>
-    </section>
-
+    </div>
     <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p><strong>广东艾里森光电技术有限公司</strong></p>
-                <p>📍 地址：广东省江门市江海区东升路南山工业园西区一号厂房</p>
-                <p>📞 电话：<a href="tel:18026422225">18026422225</a></p>
-                <p>📧 邮箱：<a href="mailto:slisnlight@163.com">slisnlight@163.com</a></p>
-            </div>
-            <div class="copyright">
-                © 2026 广东艾里森光电技术有限公司 | 用光影重构景区流量密码
-            </div>
+        <div class="footer-info">
+            <p><strong>广东艾里森光电技术有限公司</strong></p>
+            <p>地址：广东省江门市江海区东升路南山工业园西区一号厂房</p>
+            <p>电话：<a href="tel:18026422225">18026422225</a></p>
+            <p>邮箱：<a href="mailto:slisnlight@163.com">slisnlight@163.com</a></p>
         </div>
+        <div class="copyright">© 2026 广东艾里森光电技术有限公司</div>
     </footer>
+    <a href="admin/" class="admin-link">后台管理</a>
 </body>
 </html>
