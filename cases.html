@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="广东艾里森光电技术有限公司 - 文旅灯光艺术装置案例展示，查看我们的成功项目案例">
+    <meta name="keywords" content="文旅灯光案例,灯光艺术装置案例,美陈装置案例,艾里森光电案例">
+    <meta name="author" content="广东艾里森光电技术有限公司">
+    <meta name="robots" content="index, follow">
+    
+    <!-- 百度搜索资源平台验证 -->
+    <meta name="baidu-site-verification" content="codeva-sevWLRK4PB" />
+    
+    <!-- GEO优化标签 -->
+    <meta name="geo.region" content="CN-GD">
+    <meta name="geo.placename" content="江门市">
+    <meta name="geo.position" content="22.5922;113.0906">
+    <meta name="ICBM" content="22.5922, 113.0906">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="案例展示 - 广东艾里森光电">
+    <meta property="og:description" content="查看我们的文旅灯光艺术装置成功案例">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    
+    <title>案例展示 - 广东艾里森光电技术有限公司 | 文旅灯光艺术装置</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #FFD700;
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #FFD700;
+        }
+        
+        .hero {
+            padding: 180px 2rem 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cases-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .case-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+        
+        .case-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2a2a4a 0%, #1a1a2e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .case-image-placeholder {
+            color: #FFD700;
+            font-size: 3rem;
+            z-index: 1;
+        }
+        
+        .case-content {
+            padding: 1.5rem;
+        }
+        
+        .case-title {
+            font-size: 1.4rem;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .case-category {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .case-description {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .case-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .case-location {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .case-date {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .case-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .case-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .add-case-notice {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px dashed rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .add-case-notice h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        
+        .add-case-notice p {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-info {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-info a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+        
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">艾里森光电</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="services.html">主营业务</a></li>
+                <li><a href="cases.html" class="active">案例展示</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>✨ 案例展示</h1>
+        <p>用光影重构景区流量密码，打造独特的文旅体验</p>
+    </section>
+
+    <section class="cases-container">
+        <div class="cases-grid">
+            <!-- 案例1 -->
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-image-placeholder">💡</div>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">某景区夜游灯光秀</h3>
+                    <span class="case-category">文旅灯光</span>
+                    <p class="case-description">
+                        为某知名景区打造沉浸式夜游灯光秀，融合现代科技与传统文化，
+                        创造独特的夜间游览体验，显著提升景区夜间客流量。
+                    </p>
+                    <div class="case-meta">
+                        <span class="case-location">📍 广东省</span>
+                        <span class="case-date">📅 2025年</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 案例2 -->
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-image-placeholder">🎨</div>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">商业广场美陈装置</h3>
+                    <span class="case-category">美陈装置</span>
+                    <p class="case-description">
+                        为大型商业广场设计并制作互动式美陈装置，
+                        结合灯光艺术与科技互动，成为网红打卡热点。
+                    </p>
+                    <div class="case-meta">
+                        <span class="case-location">📍 江门市</span>
+                        <span class="case-date">📅 2025年</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 案例3 -->
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-image-placeholder">🎭</div>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">大型音乐节舞美装置</h3>
+                    <span class="case-category">舞美装置</span>
+                    <p class="case-description">
+                        为大型音乐节设计制作震撼的舞台灯光艺术装置，
+                        融合光影艺术与舞台表演，创造难忘的现场体验。
+                    </p>
+                    <div class="case-meta">
+                        <span class="case-location">📍 珠三角</span>
+                        <span class="case-date">📅 2024年</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 案例4 -->
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-image-placeholder">🏙️</div>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">城市更新灯光改造</h3>
+                    <span class="case-category">城市更新</span>
+                    <p class="case-description">
+                        参与城市更新项目，为老城区注入新的活力，
+                        通过灯光艺术提升城市形象，促进夜间经济发展。
+                    </p>
+                    <div class="case-meta">
+                        <span class="case-location">📍 广东省</span>
+                        <span class="case-date">📅 2024年</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 案例5 -->
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-image-placeholder">🎪</div>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">行为艺术舞台装置</h3>
+                    <span class="case-category">行为艺术</span>
+                    <p class="case-description">
+                        为行为艺术表演定制独特的舞台灯光装置，
+                        将光影与表演完美融合，创造令人惊叹的艺术效果。
+                    </p>
+                    <div class="case-meta">
+                        <span class="case-location">📍 广州市</span>
+                        <span class="case-date">📅 2024年</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 案例6 -->
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-image-placeholder">✨</div>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">网红打卡灯光装置</h3>
+                    <span class="case-category">打卡装置</span>
+                    <p class="case-description">
+                        设计制作极具传播力的网红打卡灯光装置，
+                        结合互动科技与美学设计，迅速成为社交媒体热点。
+                    </p>
+                    <div class="case-meta">
+                        <span class="case-location">📍 深圳市</span>
+                        <span class="case-date">📅 2023年</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-case-notice">
+            <h3>📢 更多案例即将上线</h3>
+            <p>我们正在整理更多精彩案例，后台管理系统开发中...</p>
+            <p>如有项目合作需求，请联系我们：<a href="tel:18026422225" style="color: #FFD700;">18026422225</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>广东艾里森光电技术有限公司</strong></p>
+                <p>📍 地址：广东省江门市江海区东升路南山工业园西区一号厂房</p>
+                <p>📞 电话：<a href="tel:18026422225">18026422225</a></p>
+                <p>📧 邮箱：<a href="mailto:slisnlight@163.com">slisnlight@163.com</a></p>
+            </div>
+            <div class="copyright">
+                © 2026 广东艾里森光电技术有限公司 | 用光影重构景区流量密码
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

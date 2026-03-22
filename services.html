@@ -3,93 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="广东艾里森光电主营业务 - 文旅城市更新方案设计、文旅场景打造、灯光艺术装置、美陈打卡装置">
-    <meta name="keywords" content="文旅灯光服务,灯光艺术装置,美陈装置,舞美装置">
+    <meta name="description" content="广东艾里森光电技术有限公司主营业务 - 文旅城市更新方案设计、文旅场景打造、灯光艺术装置、美陈打卡装置、行为艺术舞台、大型舞美装置设备">
+    <meta name="keywords" content="文旅灯光,灯光艺术装置,美陈装置,舞美装置,夜游经济,城市更新">
+    <meta name="author" content="广东艾里森光电技术有限公司">
+    <meta name="robots" content="index, follow">
+    
+    <!-- 百度搜索资源平台验证 -->
+    <meta name="baidu-site-verification" content="codeva-sevWLRK4PB" />
+    
+    <!-- GEO优化标签 -->
     <meta name="geo.region" content="CN-GD">
     <meta name="geo.placename" content="江门市">
     <meta name="geo.position" content="22.5922;113.0906">
+    <meta name="ICBM" content="22.5922, 113.0906">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="主营业务 - 广东艾里森光电">
+    <meta property="og:description" content="文旅城市更新方案设计、文旅场景打造、灯光艺术装置、美陈打卡装置">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    
     <title>主营业务 - 广东艾里森光电技术有限公司</title>
+    
     <style>
-        body {
-            font-family: 'Microsoft YaHei', sans-serif;
-            line-height: 1.8;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            line-height: 1.8;
+            color: #333;
             background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
-            color: #fff;
         }
-        .container {
-            max-width: 1000px;
+        
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        nav {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
         }
-        h1 {
-            color: #ffd700;
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #FFD700;
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #FFD700;
+        }
+        
+        .hero {
+            padding: 180px 2rem 80px;
             text-align: center;
-            margin-bottom: 40px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
         }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
         .service-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            margin: 20px 0;
+            padding: 2rem;
             border-radius: 15px;
             border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .service-card h2 {
-            color: #ffd700;
-            margin-top: 0;
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
         }
-        .back-link {
-            display: inline-block;
-            margin-top: 40px;
-            color: #ffd700;
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #FFD700;
+            margin: 2rem 0;
+        }
+        
+        h2 {
+            color: #FFD700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-info {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-info a {
+            color: #FFD700;
             text-decoration: none;
+        }
+        
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <nav>
+            <div class="logo">艾里森光电</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="services.html" class="active">主营业务</a></li>
+                <li><a href="cases.html">案例展示</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
         <h1>主营业务</h1>
-        
-        <div class="service-card">
-            <h2>文旅城市更新方案设计</h2>
-            <p>为城市更新提供全方位的光影艺术解决方案，让旧城区焕发新生机。我们通过光影艺术激活城市空间，提升城市品质和吸引力。</p>
+        <p>为城市更新、文旅产业、商业空间提供全链路解决方案</p>
+    </section>
+
+    <div class="container">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏙️</div>
+                <h3>文旅城市更新方案设计</h3>
+                <p>为城市更新项目提供专业的灯光艺术方案设计，融合城市文化特色，打造独特的夜间景观，提升城市形象，促进夜间经济发展。</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎪</div>
+                <h3>文旅场景打造</h3>
+                <p>为文旅景区、主题乐园、特色小镇等打造沉浸式文旅场景，通过光影艺术与互动科技，创造难忘的游客体验。</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>灯光艺术装置</h3>
+                <p>设计制作各类灯光艺术装置，从概念设计到工程落地，融合艺术美学与科技创新，打造网红打卡点。</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>美陈打卡装置</h3>
+                <p>为商业空间、购物中心、展览活动等设计制作美陈装置，结合互动科技，创造具有传播力的打卡场景。</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎭</div>
+                <h3>行为艺术舞台</h3>
+                <p>为行为艺术表演、现场演出等定制独特的舞台灯光装置，将光影与表演完美融合，创造令人惊叹的艺术效果。</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎪</div>
+                <h3>大型舞美装置设备</h3>
+                <p>为大型音乐节、演唱会、节庆活动等提供专业的舞美装置设备，从设计到制作到现场执行，全流程服务。</p>
+            </div>
         </div>
 
-        <div class="service-card">
-            <h2>文旅场景打造</h2>
-            <p>打造沉浸式文旅体验场景，提升游客停留时间和消费意愿。从概念策划到落地交付，全链路服务确保最佳体验效果。</p>
+        <div class="highlight">
+            <h2 style="text-align: left; margin-top: 0;">核心价值</h2>
+            <p><strong>我们不卖设备，我们卖的是游客的停留时间。</strong></p>
+            <p>从"无人问津"到"网红打卡地"，艾里森让光影成为景区最硬核的引流武器。</p>
         </div>
 
-        <div class="service-card">
-            <h2>灯光艺术装置</h2>
-            <p>创意灯光艺术装置设计与制作，打造独特的视觉记忆点。每个装置都经过"出片率""传播力""互动性"三重验证。</p>
+        <div class="highlight">
+            <h2 style="text-align: left; margin-top: 0;">我们的承诺</h2>
+            <ul style="color: #ccc; margin-left: 2rem;">
+                <li><strong>创意100%还原</strong> - 从概念到落地，确保设计方案完美呈现</li>
+                <li><strong>工程品质保证</strong> - 大型舞美装置实战经验，安全可靠</li>
+                <li><strong>全链条服务</strong> - 从方案设计到后期运维，全程护航</li>
+                <li><strong>流量增长保障</strong> - 每个装置都经过流量逻辑验证</li>
+            </ul>
         </div>
-
-        <div class="service-card">
-            <h2>美陈打卡装置</h2>
-            <p>为小红书/抖音而生的美陈打卡装置，让游客主动成为传播节点。定制化设计确保每一处都是绝佳的拍照背景。</p>
-        </div>
-
-        <div class="service-card">
-            <h2>行为艺术舞台</h2>
-            <p>行为艺术与互动灯光装置结合，让游客从"旁观者"变成"参与者"。通过情绪体验升级，实现沉浸式情感共鸣。</p>
-        </div>
-
-        <div class="service-card">
-            <h2>大型舞美装置设备</h2>
-            <p>大型舞美装置的设计与制作，确保创意100%还原。丰富的实战经验保障大型项目的顺利实施和完美呈现。</p>
-        </div>
-
-        <h2 style="color: #ffd700; text-align: center; margin-top: 60px;">联系我们</h2>
-        <div class="service-card">
-            <h2>立即咨询</h2>
-            <p><strong>公司地址：</strong>广东省江门市江海区东升路南山工业园西区一号厂房</p>
-            <p><strong>联系电话：</strong><a href="tel:18026422225" style="color: #ffd700; text-decoration: none;">18026422225</a></p>
-            <p><strong>电子邮箱：</strong><a href="mailto:slisnlight@163.com" style="color: #ffd700; text-decoration: none;">slisnlight@163.com</a></p>
-        </div>
-
-        <a href="index.html" class="back-link">← 返回首页</a>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>广东艾里森光电技术有限公司</strong></p>
+                <p>📍 地址：广东省江门市江海区东升路南山工业园西区一号厂房</p>
+                <p>📞 电话：<a href="tel:18026422225">18026422225</a></p>
+                <p>📧 邮箱：<a href="mailto:slisnlight@163.com">slisnlight@163.com</a></p>
+            </div>
+            <div class="copyright">
+                © 2026 广东艾里森光电技术有限公司 | 用光影重构景区流量密码
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
