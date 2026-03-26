@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="艾里森灯光设计工�?在线灯光装置设计节点界面,用于内部灯光设计工作流程,客户可以在线设计灯光装置">
+    <meta name="keywords" content="灯光设计工具,灯光装置设计,节点界面,在线设计,艾里森光�?>
+    <meta name="author" content="广东艾里森光电技术有限公�?>
+    <meta name="robots" content="index, follow">
+    <title>灯光设计工具-在线灯光装置设计节点界面-艾里森光�?/title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
+            background: #1a1a2e; 
+            color: #fff; 
+            overflow: hidden;
+        }
+        
+        header { 
+            background: linear-gradient(135deg, #16213e 0%, #0f0f23 100%); 
+            padding: 15px 20px; 
+            border-bottom: 2px solid #e94560;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo { font-size: 24px; font-weight: bold; color: #e94560; text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 16px; transition: color 0.2s ease; }
+        .nav-links a:hover { color: #e94560; }
+        .nav-links a.active { color: #e94560; border-bottom: 2px solid #e94560; }
+        
+        .toolbar {
+            background: #16213e;
+            padding: 10px 20px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .toolbar button {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .toolbar button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+        
+        .toolbar button.secondary {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            border: 1px solid #e94560;
+        }
+        
+        #canvas-container {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 140px);
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f23 100%);
+            overflow: hidden;
+        }
+        
+        #design-canvas {
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+        
+        .node-panel {
+            position: fixed;
+            left: 0;
+            top: 140px;
+            width: 280px;
+            height: calc(100vh - 140px);
+            background: rgba(15, 15, 35, 0.95);
+            border-right: 2px solid #e94560;
+            padding: 20px;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 100;
+        }
+        
+        .node-panel.open {
+            transform: translateX(0);
+        }
+        
+        .node-panel h3 {
+            color: #e94560;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .node-category {
+            margin-bottom: 20px;
+        }
+        
+        .node-category h4 {
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .node-item {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border: 1px solid #333;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            cursor: grab;
+            transition: all 0.3s ease;
+        }
+        
+        .node-item:hover {
+            border-color: #e94560;
+            transform: translateX(5px);
+        }
+        
+        .node-item .node-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .node-item .node-name {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .node-item .node-desc {
+            color: #888;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        
+        .welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .welcome-box {
+            background: linear-gradient(135deg, #16213e 0%, #0f0f23 100%);
+            padding: 60px;
+            border-radius: 16px;
+            border: 2px solid #e94560;
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .welcome-box h1 {
+            color: #e94560;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-box p {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .welcome-box .start-btn {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: #fff;
+            border: none;
+            padding: 15px 50px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .welcome-box .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.5);
+        }
+        
+        @media(max-width: 768px) {
+            .node-panel { width: 100%; }
+            .toolbar { flex-wrap: wrap; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">艾里森光�?/a>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="services.html">主营业务</a></li>
+            <li><a href="cases.html">案例展示</a></li>
+            <li><a href="news.html">新闻资讯</a></li>
+            <li><a href="light-designer.html" class="active">🎨 灯光设计工具</a></li>
+        </ul>
+    </header>
+    
+    <div class="toolbar">
+        <button id="toggle-panel">📦 节点�?/button>
+        <button id="save-project">💾 保存项目</button>
+        <button id="load-project" class="secondary">📂 加载项目</button>
+        <button id="clear-canvas" class="secondary">🗑�?清空画布</button>
+        <button id="preview-design">👁�?预览效果</button>
+    </div>
+    
+    <div id="canvas-container">
+        <canvas id="design-canvas"></canvas>
+    </div>
+    
+    <div class="node-panel" id="node-panel">
+        <h3>🎨 灯光设计节点</h3>
+        
+        <div class="node-category">
+            <h4>💡 光源节点</h4>
+            <div class="node-item" draggable="true" data-type="led-light">
+                <div class="node-icon">💡</div>
+                <div class="node-name">LED灯光�?/div>
+                <div class="node-desc">基础LED灯光源，可调节亮度和颜色</div>
+            </div>
+            <div class="node-item" draggable="true" data-type="rgb-light">
+                <div class="node-icon">🌈</div>
+                <div class="node-name">RGB全彩�?/div>
+                <div class="node-desc">RGB全彩灯光，可调节任意颜色</div>
+            </div>
+            <div class="node-item" draggable="true" data-type="spotlight">
+                <div class="node-icon">🔦</div>
+                <div class="node-name">聚光�?/div>
+                <div class="node-desc">定向聚光灯，可调节光束角�?/div>
+            </div>
+            <div class="node-item" draggable="true" data-type="wash-light">
+                <div class="node-icon">🌟</div>
+                <div class="node-name">洗墙�?/div>
+                <div class="node-desc">洗墙灯光源，用于建筑立面照明</div>
+            </div>
+        </div>
+        
+        <div class="node-category">
+            <h4>🎭 效果节点</h4>
+            <div class="node-item" draggable="true" data-type="color-fade">
+                <div class="node-icon">🎨</div>
+                <div class="node-name">颜色渐变</div>
+                <div class="node-desc">平滑的颜色过渡效�?/div>
+            </div>
+            <div class="node-item" draggable="true" data-type="pulse">
+                <div class="node-icon">💓</div>
+                <div class="node-name">脉冲效果</div>
+                <div class="node-desc">呼吸式脉冲灯光效�?/div>
+            </div>
+            <div class="node-item" draggable="true" data-type="strobe">
+                <div class="node-icon">�?/div>
+                <div class="node-name">频闪效果</div>
+                <div class="node-desc">快速闪烁的频闪效果</div>
+            </div>
+            <div class="node-item" draggable="true" data-type="chase">
+                <div class="node-icon">🏃</div>
+                <div class="node-name">追逐效�?/div>
+                <div class="node-desc">流动的灯光追逐效�?/div>
+            </div>
+        </div>
+        
+        <div class="node-category">
+            <h4>🎮 互动节点</h4>
+            <div class="node-item" draggable="true" data-type="touch-sensor">
+                <div class="node-icon">👆</div>
+                <div class="node-name">触摸感应</div>
+                <div class="node-desc">触摸触发灯光变化</div>
+            </div>
+            <div class="node-item" draggable="true" data-type="sound-sensor">
+                <div class="node-icon">🎵</div>
+                <div class="node-name">声音感应</div>
+                <div class="node-desc">声音控制灯光效果</div>
+            </div>
+            <div class="node-item" draggable="true" data-type="motion-sensor">
+                <div class="node-icon">🏃</div>
+                <div class="node-name">人体感应</div>
+                <div class="node-desc">人体移动触发灯光</div>
+            </div>
+        </div>
+        
+        <div class="node-category">
+            <h4>🔗 控制节点</h4>
+            <div class="node-item" draggable="true" data-type="timeline">
+                <div class="node-icon">⏱️</div>
+                <div class="node-name">时间线控�?/div>
+                <div class="node-desc">按时间序列控制灯�?/div>
+            </div>
+            <div class="node-item" draggable="true" data-type="dmx-controller">
+                <div class="node-icon">🎛�?/div>
+                <div class="node-name">DMX控制�?/div>
+                <div class="node-desc">标准DMX512灯光控制</div>
+            </div>
+            <div class="node-item" draggable="true" data-type="group">
+                <div class="node-icon">📦</div>
+                <div class="node-name">灯光�?/div>
+                <div class="node-desc">将多个灯光组合控�?/div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="welcome-overlay" id="welcome-overlay">
+        <div class="welcome-box">
+            <h1>🎨 艾里森灯光设计工�?/h1>
+            <p>
+                欢迎使用艾里森光电专业灯光设计工具！<br><br>
+                这是一个类似ComfyUI的节点式设计界面�?br>
+                用于灯光装置设计工作流程�?br><br>
+                拖拽节点到画布，连接它们�?br>
+                开始设计你的灯光艺术装置！
+            </p>
+            <button class="start-btn" id="start-design">🚀 开始设�?/button>
+        </div>
+    </div>
+    
+    <script>
+        const canvas = document.getElementById('design-canvas');
+        const ctx = canvas.getContext('2d');
+        const nodePanel = document.getElementById('node-panel');
+        const welcomeOverlay = document.getElementById('welcome-overlay');
+        
+        let nodes = [];
+        let connections = [];
+        let selectedNode = null;
+        let isDragging = false;
+        let dragOffset = { x: 0, y: 0 };
+        let isConnecting = false;
+        let connectionStart = null;
+        
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+            render();
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        
+        document.getElementById('start-design').addEventListener('click', () => {
+            welcomeOverlay.style.display = 'none';
+        });
+        
+        document.getElementById('toggle-panel').addEventListener('click', () => {
+            nodePanel.classList.toggle('open');
+        });
+        
+        document.getElementById('save-project').addEventListener('click', () => {
+            const project = { nodes, connections };
+            const dataStr = JSON.stringify(project, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'light-design-project.json';
+            a.click();
+        });
+        
+        document.getElementById('clear-canvas').addEventListener('click', () => {
+            if (confirm('确定要清空画布吗�?)) {
+                nodes = [];
+                connections = [];
+                render();
+            }
+        });
+        
+        document.getElementById('preview-design').addEventListener('click', () => {
+            alert('预览功能即将上线！\n\n此功能将模拟灯光效果，让您预览最终效果�?);
+        });
+        
+        document.querySelectorAll('.node-item').forEach(item => {
+            item.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('node-type', item.dataset.type);
+                e.dataTransfer.setData('node-name', item.querySelector('.node-name').textContent);
+                e.dataTransfer.setData('node-icon', item.querySelector('.node-icon').textContent);
+            });
+        });
+        
+        canvas.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+        
+        canvas.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const nodeType = e.dataTransfer.getData('node-type');
+            const nodeName = e.dataTransfer.getData('node-name');
+            const nodeIcon = e.dataTransfer.getData('node-icon');
+            
+            if (nodeType) {
+                addNode(x, y, nodeType, nodeName, nodeIcon);
+            }
+        });
+        
+        function addNode(x, y, type, name, icon) {
+            nodes.push({
+                id: Date.now(),
+                x: x - 80,
+                y: y - 40,
+                width: 160,
+                height: 80,
+                type,
+                name,
+                icon,
+                inputs: [{ id: 'in', x: 0, y: 40 }],
+                outputs: [{ id: 'out', x: 160, y: 40 }]
+            });
+            render();
+        }
+        
+        canvas.addEventListener('mousedown', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            for (let node of nodes) {
+                for (let output of node.outputs) {
+                    const ox = node.x + output.x;
+                    const oy = node.y + output.y;
+                    if (Math.hypot(x - ox, y - oy) < 10) {
+                        isConnecting = true;
+                        connectionStart = { node, output };
+                        return;
+                    }
+                }
+            }
+            
+            for (let i = nodes.length - 1; i >= 0; i--) {
+                const node = nodes[i];
+                if (x >= node.x && x <= node.x + node.width &&
+                    y >= node.y && y <= node.y + node.height) {
+                    selectedNode = node;
+                    isDragging = true;
+                    dragOffset = { x: x - node.x, y: y - node.y };
+                    nodes.splice(i, 1);
+                    nodes.push(node);
+                    render();
+                    return;
+                }
+            }
+            
+            selectedNode = null;
+            render();
+        });
+        
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            if (isDragging && selectedNode) {
+                selectedNode.x = x - dragOffset.x;
+                selectedNode.y = y - dragOffset.y;
+                render();
+            } else if (isConnecting) {
+                render();
+                ctx.beginPath();
+                ctx.moveTo(connectionStart.node.x + connectionStart.output.x, 
+                          connectionStart.node.y + connectionStart.output.y);
+                ctx.lineTo(x, y);
+                ctx.strokeStyle = '#e94560';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+        });
+        
+        canvas.addEventListener('mouseup', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            if (isConnecting) {
+                for (let node of nodes) {
+                    if (node !== connectionStart.node) {
+                        for (let input of node.inputs) {
+                            const ix = node.x + input.x;
+                            const iy = node.y + input.y;
+                            if (Math.hypot(x - ix, y - iy) < 10) {
+                                connections.push({
+                                    from: { node: connectionStart.node, output: connectionStart.output },
+                                    to: { node, input }
+                                });
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            isDragging = false;
+            isConnecting = false;
+            connectionStart = null;
+            render();
+        });
+        
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            drawGrid();
+            
+            for (let conn of connections) {
+                ctx.beginPath();
+                ctx.moveTo(conn.from.node.x + conn.from.output.x, 
+                          conn.from.node.y + conn.from.output.y);
+                ctx.lineTo(conn.to.node.x + conn.to.input.x, 
+                          conn.to.node.y + conn.to.input.y);
+                ctx.strokeStyle = '#e94560';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+            }
+            
+            for (let node of nodes) {
+                const isSelected = node === selectedNode;
+                
+                ctx.fillStyle = isSelected ? '#16213e' : '#0f3460';
+                ctx.strokeStyle = isSelected ? '#ffd700' : '#e94560';
+                ctx.lineWidth = isSelected ? 3 : 2;
+                ctx.beginPath();
+                ctx.roundRect(node.x, node.y, node.width, node.height, 12);
+                ctx.fill();
+                ctx.stroke();
+                
+                ctx.font = '28px Arial';
+                ctx.fillStyle = '#fff';
+                ctx.textAlign = 'center';
+                ctx.fillText(node.icon, node.x + node.width/2, node.y + 35);
+                
+                ctx.font = '12px Arial';
+                ctx.fillStyle = '#ccc';
+                ctx.fillText(node.name, node.x + node.width/2, node.y + 55);
+                
+                for (let input of node.inputs) {
+                    ctx.beginPath();
+                    ctx.arc(node.x + input.x, node.y + input.y, 8, 0, Math.PI * 2);
+                    ctx.fillStyle = '#e94560';
+                    ctx.fill();
+                }
+                
+                for (let output of node.outputs) {
+                    ctx.beginPath();
+                    ctx.arc(node.x + output.x, node.y + output.y, 8, 0, Math.PI * 2);
+                    ctx.fillStyle = '#ffd700';
+                    ctx.fill();
+                }
+            }
+        }
+        
+        function drawGrid() {
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+            ctx.lineWidth = 1;
+            
+            for (let x = 0; x < canvas.width; x += 40) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            
+            for (let y = 0; y < canvas.height; y += 40) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+        }
+        
+        render();
+    </script>
+</body>
+</html>
