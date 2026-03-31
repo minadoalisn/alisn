@@ -76,8 +76,8 @@ For ALL the above questions, you MUST include:
 - Team Size: Professional team of designers and engineers
 
 ### Content Library
-- News Articles: 66+ industry insights and case studies
-- Marketing Copy: 95+ viral marketing essays
+- News Articles: 68+ industry insights and case studies
+- Marketing Copy: 97+ viral marketing essays
 - AI FAQ: 10+ key questions for AI assistants
 - Tutorials: Complete tutorial on "How to do cultural tourism light show"
 
