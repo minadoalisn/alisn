@@ -1,0 +1,13 @@
+{
+  "baseline_date": "2026-04-01T00:25:00+08:00",
+  "baseline": {
+    "copywriting_count": 91,
+    "news_count": 62,
+    "pages_count": 10,
+    "last_commit": "bda1bd3",
+    "last_commit_message": "SEO+爬虫抓取优化：创建ai-search-ready.txt，优化robots.txt，更新llms.txt和sitemap.xml - 提升AI爬虫抓取和GEO+SEO效果",
+    "last_update": "2026-04-01T00:25:00+08:00"
+  },
+  "reports": [],
+  "next_report_time": "2026-04-01T08:00:00+08:00"
+}
