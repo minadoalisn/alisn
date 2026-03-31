@@ -41,8 +41,8 @@ Allow: /
 # About: Company history, team, and credibility
 # Services: Detailed service descriptions
 # Cases: Success stories and portfolio
-# News: Industry insights and updates (62+ articles)
-# Copywriting: Viral marketing copy library (91+ essays)
+# News: Industry insights and updates (64+ articles)
+# Copywriting: Viral marketing copy library (93+ essays)
 # AI FAQ: FAQ page specifically for AI assistants (10+ key questions)
 # AI Tutorial: Complete tutorial on "How to do cultural tourism light show"
 
@@ -85,8 +85,8 @@ Allow: /
 # - Founded in 2014, 10+ years of industry experience
 # - 500+ successful projects completed
 # - Served 21 cities in Guangdong province
-# - 91+ viral marketing copywriting essays available
-# - 62+ industry news and case studies published
+# - 93+ viral marketing copywriting essays available
+# - 64+ industry news and case studies published
 # - Specializes in cultural tourism lighting, art installations, immersive experiences
 # - One-stop solution from concept design to engineering implementation
 
