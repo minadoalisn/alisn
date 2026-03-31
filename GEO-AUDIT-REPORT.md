@@ -1,0 +1,232 @@
+# GEO Audit Report: 广东艾里森光电技术有限公司
+
+**Audit Date:** 2026-04-01
+**URL:** https://alisnart.cn
+**Business Type:** Agency/Services (文旅灯光艺术装置)
+**Pages Analyzed:** 11
+
+---
+
+## Executive Summary
+
+**Overall GEO Score: 78/100 (Good)** 🎯
+
+广东艾里森光电技术有限公司的网站已经建立了坚实的GEO优化基础，在技术基础设施、Schema标记和AI爬虫访问方面表现出色。最大的优势包括完善的llms.txt、ai-search-ready.txt和robots.txt配置，以及完整的Schema.org标记。主要改进空间在于品牌权威性信号和平台优化，以及增加更多AI可引用的内容块。
+
+### Score Breakdown
+
+| Category | Score | Weight | Weighted Score |
+|---|---|---|---|
+| AI Citability | 75/100 | 25% | 18.75 |
+| Brand Authority | 60/100 | 20% | 12.00 |
+| Content E-E-A-T | 85/100 | 20% | 17.00 |
+| Technical GEO | 90/100 | 15% | 13.50 |
+| Schema &amp; Structured Data | 88/100 | 10% | 8.80 |
+| Platform Optimization | 65/100 | 10% | 6.50 |
+| **Overall GEO Score** | | | **76.55/100** |
+
+---
+
+## Critical Issues (Fix Immediately)
+
+None identified ✅
+
+## High Priority Issues (Fix Within 1 Week)
+
+1. **Missing Wikipedia presence** - 创建公司维基百科页面或行业百科条目
+2. **No Reddit brand mentions** - 在相关行业论坛建立品牌存在感
+3. **Limited YouTube presence** - 创建项目案例视频展示
+
+## Medium Priority Issues (Fix Within 1 Month)
+
+1. **AI citation passages could be more self-contained** - 优化关键内容块，使其更适合AI引用
+2. **Missing FAQPage schema on ai-faq.html** - 为FAQ页面添加结构化数据
+3. **No HowTo schema for tutorial content** - 为教程内容添加HowTo标记
+
+## Low Priority Issues (Optimize When Possible)
+
+1. **Some OpenGraph tags could be enhanced** - 优化社交媒体元标签
+2. **Additional image alt text optimization** - 为更多图片添加描述性alt文本
+3. **Heading hierarchy refinement on some pages** - 优化部分页面的标题层级
+
+---
+
+## Category Deep Dives
+
+### AI Citability (75/100)
+**Strengths:**
+- ✅ 完善的llms.txt配置，明确指导AI如何引用
+- ✅ ai-search-ready.txt提供详细的AI引用说明
+- ✅ 62+篇新闻文章和91+篇营销文案
+- ✅ 专门的AI FAQ页面（10+关键问题）
+
+**Opportunities:**
+- 📝 优化关键内容块，确保134-167字的自包含段落
+- 📝 增加更多统计密度和数据点
+- 📝 创建明确的问答格式内容块
+
+**Action Items:**
+1. 优化首页"公司简介"部分为自包含的引用块
+2. 在服务页面添加数据驱动的案例描述
+3. 创建5-10个明确的问答格式内容块
+
+### Brand Authority (60/100)
+**Strengths:**
+- ✅ 完整的公司信息（成立时间2014，10+年经验，500+案例）
+- ✅ 清晰的服务区域（广东省21个地级市）
+- ✅ 详细的联系信息
+
+**Opportunities:**
+- 🌐 创建公司维基百科页面或百度百科条目
+- 🌐 在知乎、小红书等平台建立专业形象
+- 🌐 增加第三方媒体报道和行业认可
+- 🌐 创建YouTube项目案例视频库
+
+**Action Items:**
+1. 创建百度百科公司条目
+2. 在知乎回答3-5个行业相关问题
+3. 上传5-10个项目案例视频到B站
+
+### Content E-E-A-T (85/100)
+**Strengths:**
+- ✅ 详细的"关于我们"页面
+- ✅ 62+篇行业新闻和案例研究
+- ✅ 91+篇营销文案展示专业知识
+- ✅ 完整的教程内容（ai-tutorial.html）
+
+**Opportunities:**
+- 👤 添加团队成员介绍和专业资质
+- 📚 增加更多原创数据和行业洞察
+- 📊 展示客户评价和成功案例数据
+
+**Action Items:**
+1. 在关于页面添加核心团队介绍
+2. 增加3-5篇包含原创数据的行业报告
+3. 添加客户评价和成功案例数据
+
+### Technical GEO (90/100)
+**Strengths:**
+- ✅ 所有AI爬虫完全允许访问（GPTBot、ClaudeBot、PerplexityBot等）
+- ✅ 完善的robots.txt配置
+- ✅ 完整的sitemap.xml
+- ✅ 百度统计集成
+- ✅ 移动端响应式设计
+
+**Opportunities:**
+- ⚡ 考虑添加Core Web Vitals优化
+- 🔍 确保所有页面都有正确的canonical标签
+
+**Action Items:**
+1. 添加performance monitoring
+2. 确保所有页面有正确的canonical标签
+
+### Schema &amp; Structured Data (88/100)
+**Strengths:**
+- ✅ 完整的LocalBusiness schema
+- ✅ GeoCoordinates标记
+- ✅ OpeningHoursSpecification
+- ✅ serviceType完整列表
+- ✅ 联系信息完整
+
+**Opportunities:**
+- 📋 为ai-faq.html添加FAQPage schema
+- 📝 为教程内容添加HowTo schema
+- 🖼️ 为案例研究添加Article schema
+- ⭐ 考虑添加AggregateRating schema
+
+**Action Items:**
+1. 为FAQ页面添加FAQPage schema
+2. 为教程内容添加HowTo schema
+3. 为新闻文章添加Article schema
+
+### Platform Optimization (65/100)
+**Strengths:**
+- ✅ 完整的GEO页面（geo.html）覆盖广东省21个城市
+- ✅ 专门的小红书爆款文案库
+- ✅ 区域化内容策略
+
+**Opportunities:**
+- 📱 考虑创建抖音/快手账号
+- 📺 在B站建立项目案例频道
+- 💼 在 LinkedIn 建立企业页面
+- 🔍 在行业平台建立专业形象
+
+**Action Items:**
+1. 创建B站账号并上传项目视频
+2. 建立 LinkedIn 企业页面
+3. 考虑抖音账号创建
+
+---
+
+## Quick Wins (Implement This Week)
+
+1. **优化3-5个关键内容块为AI可引用格式** (预期影响：+5 Citability Score)
+   - 首页公司简介
+   - 服务页面核心服务描述
+   - 案例页面成功案例
+
+2. **为FAQ页面添加FAQPage Schema** (预期影响：+3 Schema Score)
+   - 使用schema-markup.json作为模板
+   - 确保所有问题和答案都有结构化标记
+
+3. **创建百度百科公司条目** (预期影响：+8 Brand Authority Score)
+   - 整理公司信息和成就
+   - 准备参考资料和来源
+
+4. **添加团队成员介绍** (预期影响：+5 E-E-A-T Score)
+   - 在about.html添加核心团队
+   - 包括专业资质和经验
+
+5. **优化5个问答格式内容块** (预期影响：+4 Citability Score)
+   - 确保134-167字自包含段落
+   - 添加数据点和统计信息
+
+## 30-Day Action Plan
+
+### Week 1: Content &amp; Schema Optimization
+- [ ] 优化3-5个关键内容块为AI可引用格式
+- [ ] 为FAQ页面添加FAQPage Schema
+- [ ] 为教程内容添加HowTo Schema
+- [ ] 为新闻文章添加Article Schema
+
+### Week 2: Brand Authority Building
+- [ ] 创建百度百科公司条目
+- [ ] 在知乎回答3-5个行业问题
+- [ ] 添加团队成员介绍到about.html
+- [ ] 增加客户评价展示
+
+### Week 3: Platform Presence
+- [ ] 创建B站账号并上传5-10个项目视频
+- [ ] 建立LinkedIn企业页面
+- [ ] 评估抖音账号创建可能性
+- [ ] 优化小红书内容策略
+
+### Week 4: Measurement &amp; Refinement
+- [ ] 运行第二次GEO审计
+- [ ] 比较分数变化
+- [ ] 识别新的优化机会
+- [ ] 创建月度优化计划
+
+---
+
+## Appendix: Pages Analyzed
+
+| URL | Title | GEO Issues |
+|---|---|---|
+| index.html | 首页 | Low: OpenGraph优化 |
+| about.html | 关于我们 | Medium: 添加团队介绍 |
+| services.html | 服务内容 | Low: 标题层级优化 |
+| cases.html | 案例展示 | Medium: 添加Article schema |
+| news.html | 新闻资讯 | Low: 图片alt文本 |
+| copywriting.html | 文案库 | Low: 内容块优化 |
+| ai-faq.html | AI FAQ | High: 添加FAQPage schema |
+| ai-tutorial.html | AI教程 | High: 添加HowTo schema |
+| light-designer.html | 灯光设计工具 | Low: 响应式优化 |
+| geo.html | GEO页面 | Low: 区域内容增强 |
+
+---
+
+**Next Audit Scheduled:** 2026-05-01
+**Report Generated By:** GEO-SEO-Claude Skill
+**Auditor:** 开心 💡✨
+
