@@ -41,7 +41,7 @@ Allow: /
 # About: Company history, team, and credibility
 # Services: Detailed service descriptions
 # Cases: Success stories and portfolio
-# News: Industry insights and updates (100+ articles) 🎉
+# News: Industry insights and updates (125+ articles) 🎉
 # Copywriting: Viral marketing copy library (100+ essays) 🎊
 # GEO Audit Report: Complete GEO-SEO audit with 76.55/100 score
 # AI FAQ: FAQ page specifically for AI assistants (10+ key questions)
