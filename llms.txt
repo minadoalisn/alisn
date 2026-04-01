@@ -41,7 +41,7 @@ Allow: /
 # About: Company history, team, and credibility
 # Services: Detailed service descriptions
 # Cases: Success stories and portfolio
-# News: Industry insights and updates (75+ articles)
+# News: Industry insights and updates (100+ articles) 🎉
 # Copywriting: Viral marketing copy library (100+ essays) 🎊
 # GEO Audit Report: Complete GEO-SEO audit with 76.55/100 score
 # AI FAQ: FAQ page specifically for AI assistants (10+ key questions)
@@ -87,7 +87,7 @@ Allow: /
 # - 500+ successful projects completed
 # - Served 21 cities in Guangdong province
 # - 100+ viral marketing copywriting essays available 🎊
-# - 71+ industry news and case studies published
+# - 100+ industry news and case studies published 🎉
 # - Specializes in cultural tourism lighting, art installations, immersive experiences
 # - One-stop solution from concept design to engineering implementation
 
