@@ -1,90 +1,154 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-百度搜索资源平台主动推送脚本
-自动推送网站所有页面到百度，加速收录
+百度搜索资源平台链接自动推送脚本
+使用百度准入密钥自动推送网站链接
 """
 
 import requests
 import json
+from datetime import datetime
 
-# ================== 配置信息 ==================
-# 百度搜索资源平台 token（从用户获取）
-BAIDU_TOKEN = "80e45d920116df0d1314378f0bf4b224"
+# 百度推送配置
+BAIDU_PUSH_URL = "http://data.zz.baidu.com/urls"
+SITE = "alisnart.cn"
+TOKEN = "OyebkZmZ9OGF78ia"
 
-# 网站地址
-SITE_URL = "http://8.138.214.74"
-
-# 要推送的页面列表
+# 需要推送的URL列表
 URLS_TO_PUSH = [
-    f"{SITE_URL}/",
-    f"{SITE_URL}/index.html",
-    f"{SITE_URL}/about.html",
-    f"{SITE_URL}/services.html",
-    f"{SITE_URL}/cases.html",
-    f"{SITE_URL}/sitemap.xml",
+    "https://alisnart.cn/",
+    "https://alisnart.cn/index.html",
+    "https://alisnart.cn/about.html",
+    "https://alisnart.cn/services.html",
+    "https://alisnart.cn/cases.html",
+    "https://alisnart.cn/news.html",
+    "https://alisnart.cn/copywriting.html",
+    "https://alisnart.cn/geo.html",
+    "https://alisnart.cn/light-designer.html",
+    "https://alisnart.cn/ai-faq.html",
+    "https://alisnart.cn/ai-tutorial.html",
+    "https://alisnart.cn/sitemap.xml",
+    "https://alisnart.cn/robots.txt",
+    "https://alisnart.cn/llms.txt",
+    "https://alisnart.cn/ai-search-ready.txt"
 ]
 
-# 百度推送接口地址
-PUSH_API = f"http://data.zz.baidu.com/urls?site={SITE_URL}&token={BAIDU_TOKEN}"
-
-# ================== 推送函数 ==================
-def push_urls(urls):
-    """
-    推送URL列表到百度
-    """
-    headers = {
-        'Content-Type': 'text/plain',
-    }
+def push_urls_to_baidu():
+    """推送URL到百度搜索资源平台"""
     
-    # 将URL列表转换为文本格式（每行一个URL）
-    data = '\n'.join(urls)
+    print("=" * 60)
+    print("百度搜索资源平台 - 链接自动推送")
+    print("=" * 60)
+    print(f"站点: {SITE}")
+    print(f"推送时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"待推送URL数量: {len(URLS_TO_PUSH)}")
+    print("-" * 60)
+    
+    # 构建推送URL
+    push_url = f"{BAIDU_PUSH_URL}?site={SITE}&token={TOKEN}"
+    
+    # 准备数据（每行一个URL）
+    data = "\n".join(URLS_TO_PUSH)
+    
+    print("\n📤 正在推送URL到百度...")
     
     try:
-        print(f"正在推送 {len(urls)} 个URL到百度...")
-        print(f"推送接口: {PUSH_API}")
-        print(f"推送URLs:\n{data}")
-        print("-" * 50)
+        # 发送POST请求
+        headers = {
+            "Content-Type": "text/plain"
+        }
         
-        response = requests.post(PUSH_API, headers=headers, data=data, timeout=30)
+        response = requests.post(push_url, data=data, headers=headers, timeout=30)
         
-        print(f"响应状态码: {response.status_code}")
-        print(f"响应内容: {response.text}")
+        print(f"\n📡 响应状态码: {response.status_code}")
         
-        result = response.json()
-        
-        if 'success' in result:
-            print(f"✅ 成功推送 {result['success']} 个URL")
-        if 'remain' in result:
-            print(f"📊 今日剩余推送次数: {result['remain']}")
-        if 'error' in result:
-            print(f"❌ 错误: {result['error']}")
-        if 'message' in result:
-            print(f"📝 消息: {result['message']}")
+        if response.status_code == 200:
+            # 解析响应
+            result = response.json()
             
-        return result
-        
+            print("\n✅ 推送成功！")
+            print(f"   成功推送: {result.get('success', 0)} 条")
+            print(f"   今日剩余: {result.get('remain', 0)} 条")
+            
+            if result.get('not_same_site'):
+                print(f"\n⚠️  非本站URL（未处理）: {len(result['not_same_site'])} 条")
+                for url in result['not_same_site']:
+                    print(f"   - {url}")
+            
+            if result.get('not_valid'):
+                print(f"\n⚠️  不合法URL: {len(result['not_valid'])} 条")
+                for url in result['not_valid']:
+                    print(f"   - {url}")
+            
+            # 保存推送记录
+            save_push_record(result)
+            
+            return True
+        else:
+            print(f"\n❌ 推送失败！")
+            print(f"   响应内容: {response.text}")
+            return False
+            
+    except requests.exceptions.Timeout:
+        print("\n❌ 推送超时！请稍后重试。")
+        return False
     except requests.exceptions.RequestException as e:
-        print(f"❌ 推送失败: {e}")
-        return None
-    except json.JSONDecodeError as e:
-        print(f"❌ 解析响应失败: {e}")
-        print(f"响应内容: {response.text}")
-        return None
+        print(f"\n❌ 推送出错: {e}")
+        return False
+    except json.JSONDecodeError:
+        print(f"\n❌ 响应解析失败！")
+        print(f"   响应内容: {response.text}")
+        return False
 
-# ================== 主函数 ==================
-if __name__ == "__main__":
-    print("=" * 50)
-    print("百度搜索资源平台主动推送脚本")
-    print("=" * 50)
-    print()
+def save_push_record(result):
+    """保存推送记录到文件"""
     
-    # 执行推送
-    result = push_urls(URLS_TO_PUSH)
+    record_file = "baidu_push_log.json"
     
-    print()
-    print("=" * 50)
-    if result and 'success' in result:
-        print("✅ 推送完成！")
+    try:
+        # 读取现有记录
+        try:
+            with open(record_file, 'r', encoding='utf-8') as f:
+                records = json.load(f)
+        except FileNotFoundError:
+            records = []
+        
+        # 添加新记录
+        new_record = {
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "success": result.get("success", 0),
+            "remain": result.get("remain", 0),
+            "not_same_site": result.get("not_same_site", []),
+            "not_valid": result.get("not_valid", [])
+        }
+        
+        records.insert(0, new_record)
+        
+        # 只保留最近100条记录
+        if len(records) > 100:
+            records = records[:100]
+        
+        # 保存
+        with open(record_file, 'w', encoding='utf-8') as f:
+            json.dump(records, f, ensure_ascii=False, indent=2)
+        
+        print(f"\n💾 推送记录已保存到: {record_file}")
+        
+    except Exception as e:
+        print(f"\n⚠️  保存记录失败: {e}")
+
+def main():
+    """主函数"""
+    success = push_urls_to_baidu()
+    
+    print("\n" + "=" * 60)
+    if success:
+        print("🎉 推送完成！")
     else:
-        print("⚠️  推送完成，请检查上面的输出")
-    print("=" * 50)
+        print("❌ 推送失败，请稍后重试。")
+    print("=" * 60)
+    
+    return 0 if success else 1
+
+if __name__ == "__main__":
+    exit(main())

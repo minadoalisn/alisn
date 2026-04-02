@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="广东艾里森光电新闻详�?- 文旅灯光行业动态、灯光艺术装置案例分�?>
-    <meta name="keywords" content="文旅灯光新闻,灯光艺术装置,广东艾里森光�?>
-    <meta name="author" content="广东艾里森光电技术有限公�?>
+    <meta name="description" content="广东艾里森光电新闻详情 - 文旅灯光行业动态、灯光艺术装置案例分享">
+    <meta name="keywords" content="文旅灯光新闻,灯光艺术装置,广东艾里森光电">
+    <meta name="author" content="广东艾里森光电技术有限公司">
     <meta name="robots" content="index, follow">
     <meta name="baidu-site-verification" content="codeva-bg8Fc5EMEH">
     <meta name="geo.region" content="CN-GD">
-    <meta name="geo.placename" content="江门�?>
-    <title>新闻详情 - 广东艾里森光电技术有限公�?/title>
+    <meta name="geo.placename" content="江门市">
+    <title>新闻详情 - 广东艾里森光电技术有限公司</title>
+    <!-- 缓存控制 - 防止旧版本缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <!-- 百度统计 -->
     <script>
         var _hmt = _hmt || [];
@@ -72,13 +76,14 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">艾里森光�?/a>
+            <a href="index.html" class="logo">艾里森光电</a>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="about.html">关于我们</a></li>
                 <li><a href="services.html">主营业务</a></li>
                 <li><a href="cases.html">案例展示</a></li>
                 <li><a href="news.html">新闻资讯</a></li>
+                <li><a href="light-designer.html" style="color: #FFD700; font-weight: bold;">🎨 灯光设计工具</a></li>
             </ul>
         </nav>
     </header>
@@ -89,89 +94,82 @@
 
     <footer>
         <div class="footer-info">
-            <p><strong>广东艾里森光电技术有限公�?/strong></p>
-            <p>地址：广东省江门市江海区东升路南山工业园西区一号厂�?/p>
-            <p>电话�?a href="tel:18026422225">180-2642-2225</a></p>
-            <p>邮箱�?a href="mailto:alisnlight@163.com">alisnlight@163.com</a></p>
+            <p><strong>广东艾里森光电技术有限公司</strong></p>
+            <p>地址：广东省江门市江海区东升路南山工业园西区一号厂房</p>
+            <p>电话：<a href="tel:18026422225">180-2642-2225</a></p>
+            <p>邮箱：<a href="mailto:alisnlight@163.com">alisnlight@163.com</a></p>
         </div>
         <div class="copyright">© 2026 广东艾里森光电技术有限公司 | <a href="https://beian.miit.gov.cn/" target="_blank" style="color: #666;">粤ICP备2026035496号</a></div>
     </footer>
 
     <script>
-        var currentNews = null;
-        var shareTitle = '';
-        var shareDesc = '';
-        var shareUrl = window.location.href;
-
-        // 从URL获取新闻ID
-        function getNewsId() {
-            const params = new URLSearchParams(window.location.search);
-            return parseInt(params.get('id'));
-        }
+        let shareUrl = '';
+        let shareTitle = '';
+        let shareDesc = '';
 
         // 加载新闻详情
         async function loadNewsDetail() {
-            const newsId = getNewsId();
-            if (!newsId) {
-                showError('未找到新闻ID');
-                return;
-            }
-
             try {
-                const response = await fetch('data/news.json');
-                const newsList = await response.json();
-                const news = newsList.find(n => n.id === newsId);
+                // 获取URL参数
+                const urlParams = new URLSearchParams(window.location.search);
+                const newsId = parseInt(urlParams.get('id'));
                 
-                if (!news) {
-                    showError('未找到该新闻');
+                if (!newsId) {
+                    showError('未找到新闻ID');
                     return;
                 }
 
-                currentNews = news;
-                shareTitle = news.title + ' - 广东艾里森光�?;
+                // 加载新闻数据
+                const response = await fetch('data/news.json');
+                const newsList = await response.json();
+                
+                // 查找对应的新闻
+                const news = newsList.find(n => n.id === newsId);
+                
+                if (!news) {
+                    showError('未找到新闻');
+                    return;
+                }
+
+                // 设置分享信息
+                shareUrl = window.location.href;
+                shareTitle = news.title;
                 shareDesc = news.description;
-                renderNewsDetail(news);
-                document.title = shareTitle;
-                updateMetaTags(news);
+
+                // 渲染文章
+                renderArticle(news);
             } catch (error) {
                 console.error('加载新闻失败:', error);
                 showError('加载新闻失败，请刷新页面');
             }
         }
 
-        // 更新Meta标签
-        function updateMetaTags(news) {
-            document.querySelector('meta[name="description"]').content = news.description;
-            document.querySelector('meta[name="keywords"]').content = news.keywords;
-        }
-
-        // 渲染新闻详情
-        function renderNewsDetail(news) {
+        // 渲染文章
+        function renderArticle(news) {
             const container = document.getElementById('article-container');
             container.innerHTML = `
                 <div class="article-header">
                     <span class="article-category">${news.category}</span>
                     <h1 class="article-title">${news.title}</h1>
                     <div class="article-meta">
-                        <span>发布时间�?{news.date}</span>
-                        <span> | </span>
-                        <span>阅读�?{news.views}</span>
+                        <span>📅 ${news.date}</span> · 
+                        <span>👁️ 阅读：${news.views}</span>
                     </div>
                 </div>
-
+                
                 <div class="article-image" style="background: ${news.imageGradient}">${news.image}</div>
-
+                
                 <div class="article-content" id="article-content"></div>
 
                 <div class="share-section">
-                    <h3>📢 觉得有用？分享给朋友吧！</h3>
+                    <h3>📤 分享文章</h3>
                     <div class="share-buttons">
-                        <a class="share-btn share-wechat" onclick="shareToWeChat()" title="分享到微�?>
+                        <a class="share-btn share-wechat" onclick="shareToWeChat()" title="分享到微信">
                             <span class="share-icon">💬</span>
                             <span>微信</span>
                         </a>
-                        <a class="share-btn share-weibo" onclick="shareToWeibo()" title="分享到微�?>
-                            <span class="share-icon">🌐</span>
+                        <a class="share-btn share-weibo" onclick="shareToWeibo()" title="分享到微博">
+                            <span class="share-icon">📢</span>
                             <span>微博</span>
                         </a>
                         <a class="share-btn share-qq" onclick="shareToQQ()" title="分享到QQ">
@@ -179,31 +177,31 @@
                             <span>QQ</span>
                         </a>
                         <a class="share-btn share-qzone" onclick="shareToQzone()" title="分享到QQ空间">
-                            <span class="share-icon">�?/span>
+                            <span class="share-icon">⭐</span>
                             <span>QQ空间</span>
                         </a>
-                        <a class="share-btn share-douyin" onclick="shareToDouyin()" title="分享到抖�?>
+                        <a class="share-btn share-douyin" onclick="shareToDouyin()" title="分享到抖音">
                             <span class="share-icon">🎵</span>
                             <span>抖音</span>
                         </a>
                         <a class="share-btn share-xiaohongshu" onclick="shareToXiaohongshu()" title="分享到小红书">
                             <span class="share-icon">📖</span>
-                            <span>小红�?/span>
+                            <span>小红书</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="contact-box">
                     <h2>📞 联系我们</h2>
-                    <p><strong>广东艾里森光电技术有限公�?/strong> - 专注于文旅场景创新与光影艺术赋能的综合性科技服务�?/p>
-                    <p>📍 地址：广东省江门市江海区东升路南山工业园西区一号厂�?/p>
-                    <p>📞 电话�?a href="tel:18026422225">180-2642-2225</a></p>
-                    <p>📧 邮箱�?a href="mailto:alisnlight@163.com">alisnlight@163.com</a></p>
-                    <p>🌐 官网�?a href="https://alisnart.cn">https://alisnart.cn</a></p>
+                    <p><strong>广东艾里森光电技术有限公司</strong> - 专注于文旅场景创新与光影艺术赋能的综合性科技服务商</p>
+                    <p>📍 地址：广东省江门市江海区东升路南山工业园西区一号厂房</p>
+                    <p>📞 电话：<a href="tel:18026422225">180-2642-2225</a></p>
+                    <p>📧 邮箱：<a href="mailto:alisnlight@163.com">alisnlight@163.com</a></p>
+                    <p>🌐 官网：<a href="https://alisnart.cn">https://alisnart.cn</a></p>
                 </div>
 
                 <div style="text-align: center;">
-                    <a href="news.html" class="back-btn">�?返回新闻列表</a>
+                    <a href="news.html" class="back-btn">← 返回新闻列表</a>
                 </div>
             `;
 
@@ -241,7 +239,7 @@
 
         // 分享功能
         function shareToWeChat() {
-            alert('请点击右上角，选择"发送给朋友"�?分享到朋友圈"\\n\\n链接已复制到剪贴板！');
+            alert('请点击右上角，选择"发送给朋友"或"分享到朋友圈"\n\n链接已复制到剪贴板！');
             copyToClipboard(shareUrl);
         }
 
@@ -261,12 +259,12 @@
         }
 
         function shareToDouyin() {
-            alert('请复制链接，打开抖音分享\\n\\n链接已复制到剪贴板！');
+            alert('请复制链接，打开抖音分享\n\n链接已复制到剪贴板！');
             copyToClipboard(shareUrl);
         }
 
         function shareToXiaohongshu() {
-            alert('请复制链接，打开小红书分享\\n\\n链接已复制到剪贴板！');
+            alert('请复制链接，打开小红书分享\n\n链接已复制到剪贴板！');
             copyToClipboard(shareUrl);
         }
 
@@ -279,7 +277,8 @@
             document.body.removeChild(tempInput);
         }
 
-        // 页面加载完成后执�?        document.addEventListener('DOMContentLoaded', loadNewsDetail);
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', loadNewsDetail);
     </script>
 </body>
 </html>
