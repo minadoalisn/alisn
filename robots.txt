@@ -1,6 +1,6 @@
 # robots.txt for 广东艾里森光电技术有限公司
 # https://alisnart.cn
-# Last updated: 2026-05-14
+# Last updated: 2026-05-15
 
 # Priority GEO keywords (for audit / tooling)
 # 文旅灯光装置
