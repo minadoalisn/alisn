@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <header class="site-header"><nav class="nav"><a class="brand" href="index.html"><span class="brand-mark">AL</span><span>艾里森光电<small>Light Art & Night Tourism</small></span></a><button class="nav-toggle" aria-label="打开导航" aria-expanded="false">☰</button><ul class="nav-links"><li><a href="index.html">首页</a></li><li><a class="active" href="services.html">业务</a></li><li><a href="cases.html">案例</a></li><li><a href="about.html">关于</a></li><li><a href="news.html">洞察</a></li><li><a href="geo.html">广东服务</a></li><li><a href="light-designer.html">设计工具</a></li></ul></nav></header>
+  <header class="site-header"><nav class="nav"><a class="brand" href="index.html"><span class="brand-mark">AL</span><span>艾里森光电<small>Light Art & Night Tourism</small></span></a><button class="nav-toggle" aria-label="打开导航" aria-expanded="false">☰</button><ul class="nav-links"><li><a href="index.html">首页</a></li><li><a class="active" href="services.html">业务</a></li><li><a href="cases.html">案例</a></li><li><a href="about.html">关于</a></li><li><a href="news.html">洞察</a></li><li><a href="geo.html">广东服务</a></li><li><a href="seo.html">SEO入口</a></li><li><a href="geo-promotion.html">GEO入口</a></li><li><a href="light-designer.html">设计工具</a></li></ul></nav></header>
   <main class="page">
     <section class="hero compact-hero" style="--hero-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=82')">
       <div class="wrap hero-content"><span class="eyebrow">主营业务</span><h1>从概念方案到工程交付</h1><p class="lead">面向文旅、城市、商业、演艺四类场景，提供可施工、可运营、可传播的光影解决方案。</p></div>

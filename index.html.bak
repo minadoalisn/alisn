@@ -51,7 +51,7 @@
   <main class="page">
     <!-- Hero 区域：真实案例大图 -->
     <section class="hero">
-      <img class="hero-bg" src="hero-bg.webp" alt="艾里森光电 - 露台夜景蝴蝶灯灯光艺术装置">
+      <img class="hero-bg" src="hero-bg.png" alt="艾里森光电 - 露台夜景蝴蝶灯灯光艺术装置">
       <div class="hero-overlay"></div>
       
       <div class="hero-content">
@@ -119,15 +119,15 @@
         </div>
         <div class="grid">
           <article class="card media-card">
-            <img src="cases-images/case-water-show.webp" alt="景区夜游水幕光影灯光秀">
+            <img src="cases-images/case-water-show.jpg" alt="景区夜游水幕光影灯光秀">
             <div class="media-body"><span class="tag">景区夜游</span><h3>山水景区夜间主线</h3><p>用入口仪式、林间光影、终点演艺形成完整夜游节奏。</p></div>
           </article>
           <article class="card media-card">
-            <img src="cases-images/case-gold-dragon.webp" alt="金龙献瑞主题灯光艺术装置">
+            <img src="cases-images/case-gold-dragon.jpg" alt="金龙献瑞主题灯光艺术装置">
             <div class="media-body"><span class="tag">舞台演艺</span><h3>节庆舞美装置</h3><p>适配音乐节、灯光节和主题演出，增强现场氛围与远景识别。</p></div>
           </article>
           <article class="card media-card">
-            <img src="cases-images/case-light-arch.webp" alt="商业街区光影拱廊灯光装置">
+            <img src="cases-images/case-light-arch.jpg" alt="商业街区光影拱廊灯光装置">
             <div class="media-body"><span class="tag">城市更新</span><h3>街区公共艺术节点</h3><p>以低干扰、可维护、可传播的方式点亮城市夜间界面。</p></div>
           </article>
         </div>
