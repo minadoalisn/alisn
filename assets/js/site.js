@@ -2,9 +2,23 @@ const toggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".nav-links");
 
 if (toggle && links) {
-  toggle.addEventListener("click", () => {
+  function openMenu() {
     const isOpen = links.classList.toggle("open");
     toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.textContent = isOpen ? "✕" : "☰";
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  }
+  toggle.addEventListener("click", openMenu);
+  toggle.addEventListener("touchend", (e) => { e.preventDefault(); openMenu(); });
+
+  // 点击菜单链接后自动关闭
+  links.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "☰";
+      document.body.style.overflow = "";
+    });
   });
 }
 
