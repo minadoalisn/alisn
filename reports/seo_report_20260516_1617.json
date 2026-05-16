@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-16T16:17:03.074539",
+  "action": "SEO/GEO 推广更新",
+  "new_cases": [
+    {
+      "name": "生物形态 LED 灯光天篷",
+      "url": "https://alisnart.cn/cases/biomorphic-led-canopy.html",
+      "status": "已上线",
+      "seo_status": "已收录至 sitemap/geo-feed/llms.txt"
+    },
+    {
+      "name": "热带度假村灯光拱门入口",
+      "url": "https://alisnart.cn/cases/tropical-resort-archway.html",
+      "status": "已上线",
+      "seo_status": "已收录至 sitemap/geo-feed/llms.txt"
+    }
+  ],
+  "baidu_push": "配额已满，明日重试",
+  "llms_txt": "已更新，包含新案例",
+  "geo_feed_urls": 11,
+  "sitemap_urls": "已更新"
+}
