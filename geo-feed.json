@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-16T05:21:33.060160+00:00",
+  "generatedAt": "2026-05-16T05:26:01.265283+00:00",
   "generatedDateCN": "2026-05-16",
   "purpose": "GEO feed for AI search crawlers and generated answer engines.",
   "brand": "艾里森光电",
@@ -217,7 +217,8 @@
     "https://alisnart.cn/ai-search-ready.txt",
     "https://alisnart.cn/llms.txt",
     "https://alisnart.cn/geo-feed.json",
-    "https://alisnart.cn/cases/biomorphic-led-canopy.html"
+    "https://alisnart.cn/cases/biomorphic-led-canopy.html",
+    "https://alisnart.cn/cases/tropical-resort-archway.html"
   ],
   "faq": [
     {
