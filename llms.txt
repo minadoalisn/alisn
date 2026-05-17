@@ -13,6 +13,7 @@
 - https://alisnart.cn/geo-feed.json（机器可读关键词/URL/平台状态/FAQ）
 
 ## 最新案例
+- 天环广场: https://alisnart.cn/cases/celestial-ring-plaza.html — 山地巨型环形灯光艺术地标
 - 华灯树广场: https://alisnart.cn/cases/lantern-tree-plaza.html — 商业街区主题灯光美陈装置
 - 月下仙境: https://alisnart.cn/cases/moonlit-wonderland.html — 沉浸式夜游光影打卡装置
 - 汉风月影孔雀秋千台: https://alisnart.cn/cases/han-moon-peacock-swing.html — 景区夜游互动灯光打卡装置，3.5m巨型倾斜画框+LED灯带+祥云孔雀尾羽雕塑（2026-05 更新）
