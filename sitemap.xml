@@ -25,4 +25,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+    <url>
+        <loc>https://alisnart.cn/cases/han-moon-peacock-swing.html</loc>
+        <lastmod>2026-05-17</lastmod>
+        <priority>0.8</priority>
+    </url>
+  </urlset>
