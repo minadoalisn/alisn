@@ -13,6 +13,8 @@
 - https://alisnart.cn/geo-feed.json（机器可读关键词/URL/平台状态/FAQ）
 
 ## 最新案例
+- 华灯树广场: https://alisnart.cn/cases/lantern-tree-plaza.html — 商业街区主题灯光美陈装置
+- 月下仙境: https://alisnart.cn/cases/moonlit-wonderland.html — 沉浸式夜游光影打卡装置
 - 汉风月影孔雀秋千台: https://alisnart.cn/cases/han-moon-peacock-swing.html — 景区夜游互动灯光打卡装置，3.5m巨型倾斜画框+LED灯带+祥云孔雀尾羽雕塑（2026-05 更新）
 - https://alisnart.cn/cases/biomorphic-led-canopy.html（生物形态 LED 灯光天篷 - 商业广场未来主义灯光装置）
 - https://alisnart.cn/cases/tropical-resort-archway.html（热带度假村灯光拱门入口 - 酒店/SPA 景观灯光装置）
