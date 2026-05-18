@@ -21,7 +21,7 @@ from datetime import datetime
 # 配置
 SERVER_HOST = "8.138.214.74"
 SERVER_USER = "root"
-SERVER_PASSWORD = "Lhm@2025"  # 如果密码不对，请更新
+KEY_FILE = Path(r"C:\Users\35810\AppData\Local\hermes\cache\documents\doc_b3ded313f972_alisnart.cn.pem") # 新增密钥文件路径
 SERVER_BASE = "/usr/share/nginx/html"
 
 REPO_ROOT = Path(r"D:\艾里森官网")
@@ -32,11 +32,12 @@ def ssh_connect():
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
-        ssh.connect(SERVER_HOST, username=SERVER_USER, password=SERVER_PASSWORD, timeout=10)
+        # 使用密钥文件进行认证
+        ssh.connect(SERVER_HOST, username=SERVER_USER, key_filename=str(KEY_FILE), timeout=10)
         return ssh
     except Exception as e:
         print(f"❌ SSH连接失败: {e}")
-        print("请检查服务器密码或网络连接")
+        print("请检查密钥文件路径、权限或网络连接")
         return None
 
 def upload_files(ssh, files_map):
@@ -57,8 +58,19 @@ def upload_files(ssh, files_map):
             remote_dir = "/".join(remote_path.split("/")[:-1])
             try:
                 sftp.stat(remote_dir)
-            except:
+            except FileNotFoundError: # 如果目录不存在，就创建
                 ssh.exec_command(f"mkdir -p {remote_dir}")
+                # 重新检查确保目录已创建
+                max_retries = 5
+                for _ in range(max_retries):
+                    try:
+                        sftp.stat(remote_dir)
+                        break
+                    except FileNotFoundError:
+                        import time
+                        time.sleep(1) # 等待一秒再尝试
+                else:
+                    raise Exception(f"Failed to create remote directory {remote_dir}")
             
             sftp.put(str(local_path), remote_path)
             size_kb = local_path.stat().st_size / 1024
@@ -151,6 +163,9 @@ def main():
         "cases-images/lantern-tree-plaza.webp": "cases-images/lantern-tree-plaza.webp",
         "cases/images/lantern-tree-plaza.webp": "cases/images/lantern-tree-plaza.webp",
         "en_site/assets/images/projects/lantern-tree-plaza.webp": "en_site/assets/images/projects/lantern-tree-plaza.webp",
+        
+        # IndexNow验证文件
+        "7b3e99cf8369883da4fbdc05a82a7051.txt": "7b3e99cf8369883da4fbdc05a82a7051.txt"
     }
     
     # 建立SSH连接
@@ -173,13 +188,14 @@ def main():
         "cases.html",
         "cases/lantern-tree-plaza.html",
         "en_site/projects/lantern-tree-plaza.html",
+        "7b3e99cf8369883da4fbdc05a82a7051.txt" # 验证密钥文件
     ]
     
     if not verify_online(urls_to_verify):
         print("\n⚠️  部分文件线上验证失败，请检查")
     
-    # Git提交
-    commit_msg = f"Site update: {datetime.now().strftime('%Y-%m-%d %H:%M')} - 批量修复CSS/百度统计/社交联系方式"
+    # Git提交 (如果此前Git推送失败，这里会再次尝试)
+    commit_msg = f"Site update: {datetime.now().strftime('%Y-%m-%d %H:%M')} - GEO全站改造+维护机制"
     git_commit_push(commit_msg)
     
     # 百度推送
