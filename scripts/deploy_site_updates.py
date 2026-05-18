@@ -21,7 +21,7 @@ from datetime import datetime
 # 配置
 SERVER_HOST = "8.138.214.74"
 SERVER_USER = "root"
-KEY_FILE = Path(r"C:\Users\35810\AppData\Local\hermes\cache\documents\doc_b3ded313f972_alisnart.cn.pem") # 新增密钥文件路径
+KEY_FILE = Path(r"C:\Users\35810\AppData\Local\hermes\cache\documents\doc_2220f6f2ce9c_alisnart.cn.pem") # 更新密钥文件路径
 SERVER_BASE = "/usr/share/nginx/html"
 
 REPO_ROOT = Path(r"D:\艾里森官网")
@@ -168,6 +168,13 @@ def main():
         "7b3e99cf8369883da4fbdc05a82a7051.txt": "7b3e99cf8369883da4fbdc05a82a7051.txt"
     }
     
+    # 添加国潮几何光影门相关文件
+    files_to_upload["cases/guochao-geometric-gate.html"] = "cases/guochao-geometric-gate.html"
+    files_to_upload["en_site/projects/guochao-geometric-gate.html"] = "en_site/projects/guochao-geometric-gate.html"
+    files_to_upload["cases-images/guochao-geometric-gate.webp"] = "cases-images/guochao-geometric-gate.webp"
+    files_to_upload["cases/images/guochao-geometric-gate.webp"] = "cases/images/guochao-geometric-gate.webp"
+    files_to_upload["en_site/assets/images/projects/guochao-geometric-gate.webp"] = "en_site/assets/images/projects/guochao-geometric-gate.webp"
+
     # 建立SSH连接
     ssh = ssh_connect()
     if not ssh:
@@ -188,6 +195,8 @@ def main():
         "cases.html",
         "cases/lantern-tree-plaza.html",
         "en_site/projects/lantern-tree-plaza.html",
+        "cases/guochao-geometric-gate.html", # 新产品页
+        "en_site/projects/guochao-geometric-gate.html", # 新产品页英文版
         "7b3e99cf8369883da4fbdc05a82a7051.txt" # 验证密钥文件
     ]
     
@@ -195,7 +204,7 @@ def main():
         print("\n⚠️  部分文件线上验证失败，请检查")
     
     # Git提交 (如果此前Git推送失败，这里会再次尝试)
-    commit_msg = f"Site update: {datetime.now().strftime('%Y-%m-%d %H:%M')} - GEO全站改造+维护机制"
+    commit_msg = f"Site update: {datetime.now().strftime('%Y-%m-%d %H:%M')} - GEO全站改造+维护机制+国潮几何光影门上线"
     git_commit_push(commit_msg)
     
     # 百度推送
@@ -205,6 +214,7 @@ def main():
         "cases/moonlit-wonderland.html",
         "cases/celestial-ring-plaza.html",
         "cases/han-moon-peacock-swing.html",
+        "cases/guochao-geometric-gate.html", # 新产品页
     ]
     push_baidu(urls_to_push)
     
