@@ -112,30 +112,10 @@ def git_commit_push(message):
     except subprocess.CalledProcessError as e:
         print(f"❌ Git操作失败: {e}")
         return False
-
 def push_baidu(urls):
-    """推送百度收录"""
-    print("\n=== 百度URL推送 ===")
-    
-    full_urls = [f"https://alisnart.cn/{url}" for url in urls]
-    # api_url = f"http://data.zz.baidu.com/urls?site=alisnart.cn&token={BAIDU_TOKEN}"
-    # print("百度推送功能已暂时禁用")
-    # return True
-
-    
-    try:
-        r = requests.post(
-            api_url,
-            headers={"Content-Type": "text/plain"},
-            data="\n".join(full_urls),
-            timeout=10
-        )
-        print(f"状态码: {r.status_code}")
-        print(f"响应: {r.text}")
-        return r.status_code == 200
-    except Exception as e:
-        print(f"❌ 推送失败: {e}")
-        return False
+    print("\n=== 百度URL推送 (已禁用) ===")
+    print("❌ 百度推送功能已暂时禁用，请更新有效的BAIDU_TOKEN后启用")
+    return True
 
 def main():
     print("=== 艾里森官网一键部署 ===")
